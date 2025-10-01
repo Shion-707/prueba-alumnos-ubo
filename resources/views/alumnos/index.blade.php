@@ -2,7 +2,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <a class="btn btn-success mt-4" href="{{ route('alumnos.create') }}" role="button">Registrar Alumno</a>
+                <a class="btn btn-success mt-4" href="{{ route('alumnos.create') }}" role="button">
+                    <i class="fa-solid fa-plus"></i> Registrar Alumno
+                </a>
             </div>
         </div>
 
@@ -36,10 +38,14 @@
                     <td>{{ $alumno->telefono }}</td>
                     <td>{{ $alumno->carrera->nombre }}</td>
                     <td>
-                        <a class="btn btn-primary" href="{{ route('alumnos.edit', $alumno) }}" role="button">Editar</a>
+                        <a class="btn btn-primary" href="{{ route('alumnos.edit', $alumno) }}" role="button">
+                            <i class="fa-solid fa-pen" data-bs-toggle="tooltip" title="Editar"></i>
+                        </a>
                         <form method="POST" action="{{ route('alumnos.destroy', $alumno) }}" style="display:inline;">
                             @csrf @method('DELETE')
-                            <button type="submit" class="btn btn-danger" onclick="return confirmDelete(event)">Eliminar</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirmDelete(event)">
+                                <i class="fa-solid fa-trash" data-bs-toggle="tooltip" title="Eliminar"></i>
+                            </button>
                         </form>
                     </td>
                 </tr>

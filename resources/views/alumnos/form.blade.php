@@ -64,6 +64,9 @@
             @error('carrera_id') <div>{{ $message }}</div> @enderror
         </div>
         <div class="col-12">
+            <a class="btn btn-secondary" role="button" aria-disabled="true" href="{{ route('alumnos.index') }}">
+                <i class="fa-solid fa-arrow-left" data-bs-toggle="tooltip" title="Volver"></i>
+            </a>
             <button type="submit" class="btn btn-primary">
                 {{ $alumno->exists ? 'Actualizar' : 'Registrar' }}
             </button>
