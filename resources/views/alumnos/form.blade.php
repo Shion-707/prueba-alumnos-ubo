@@ -5,14 +5,14 @@
         @if($alumno->exists) @method('PUT') @endif
 
         @if(!$alumno->exists)
-        <div class="col-md-4">
+        <div class="col-md-3">
             <label for="inputRut" class="form-label">RUT</label>
             <input type="text" class="form-control" id="inputRut" name="rut" value="">
             @error('rut') <div>{{ $message }}</div> @enderror
         </div>
         @endif
 
-        <div class="col-md-12">
+        <div class="col-md-10">
             <label for="inputNombres" class="form-label">Nombres</label>
             <input type="text" class="form-control" id="inputNombres" name="nombres" value="{{ old('nombres', $alumno->nombres)}}">
             @error('nombres') <div>{{ $message }}</div> @enderror
